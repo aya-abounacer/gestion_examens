@@ -21,87 +21,93 @@
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</p>
 
-                <form class="mx-1 mx-md-4">
 
-  <!-- Student Name -->
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-      <label class="form-label" for="studentName">Student Name</label>
-      <input type="text" id="studentName" class="form-control" placeholder="Enter your name" />
+                <form action="/Signup" method="post">
+    <?= csrf_field() ?>
+
+    <!-- Student Name -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="studentName">Student Name</label>
+            <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Enter your name" />
+        </div>
     </div>
-  </div>
 
-  <!-- Email Address -->
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-    <div class="form-outlingit statuse flex-fill mb-0">
-      <label class="form-label" for="emailAddress">Email Address</label>
-      <input type="email" id="emailAddress" class="form-control" placeholder="Enter your email" />
+    <!-- Email Address -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="emailAddress">Email Address</label>
+            <input type="email" id="emailAddress" name="emailAddress" class="form-control" placeholder="Enter your email" />
+        </div>
     </div>
-  </div>
 
-  <!-- Date of Birth -->
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-calendar-alt fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-      <label class="form-label" for="dateOfBirth">Date of Birth</label>
-      <input type="date" id="dateOfBirth" class="form-control" />
+    <!-- Date of Birth -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-calendar-alt fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="dateOfBirth">Date of Birth</label>
+            <input type="date" id="dateOfBirth" name="dateOfBirth" class="form-control" />
+        </div>
     </div>
-  </div>
 
-  <!-- Level -->
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-graduation-cap fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-      <label class="form-label" for="level">Level</label>
-      <input type="text" id="level" class="form-control" placeholder="Enter your level (e.g., Undergraduate)" />
+    <!-- Level -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-graduation-cap fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="level">Level</label>
+            <input type="text" id="level" name="level" class="form-control" placeholder="Enter your level" />
+        </div>
     </div>
-  </div>
 
-  <!-- Section -->
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-users fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-      <label class="form-label" for="section">Section</label>
-      <input type="text" id="section" class="form-control" placeholder="Enter your section" />
+    <!-- Section -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-users fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="section">Section</label>
+            <input type="text" id="section" name="section" class="form-control" placeholder="Enter your section" />
+        </div>
     </div>
-  </div>
 
-  <!-- Username -->
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-user-circle fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-      <label class="form-label" for="username">Username</label>
-      <input type="text" id="username" class="form-control" placeholder="Enter your username" />
+    <!-- Role -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user-tag fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="role">Role</label>
+            <select id="role" name="role" class="form-control" required>
+                <option value="student">Student</option>
+                <option value="professor">Professor</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
     </div>
-  </div>
 
-  <!-- Password -->
-  <div class="d-flex flex-row align-items-center mb-4">
-    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-    <div class="form-outline flex-fill mb-0">
-      <label class="form-label" for="password">Password</label>
-      <input type="password" id="password" class="form-control" placeholder="Enter your password" />
+    <!-- Username -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-user-circle fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="username">Username</label>
+            <input type="text" id="username" name="username" class="form-control" placeholder="Enter your username" />
+        </div>
     </div>
-  </div>
 
-  <div class="d-flex justify-content-between align-items-center mb-5">
-  <!-- Already Have an Account -->
-  <div>
-    <label class="form-check-label" for="form2Example3">
-      You already have an account? <a href="Viewslogin.php">Login</a>
-    </label>
-  </div>
+    <!-- Password -->
+    <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+        <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" />
+        </div>
+    </div>
 
-  <!-- Submit Button -->
-  <div>
-    <button type="submit" class="btn btn-primary btn-lg">Register</button>
-  </div>
-</div>
-
-
+    <!-- Submit Button -->
+    <div>
+        <button type="submit" class="btn btn-primary btn-lg">Register</button>
+    </div>
 </form>
+
+
 
 
               </div>
