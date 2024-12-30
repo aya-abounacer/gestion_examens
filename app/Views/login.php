@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
-  
+  <?php if(session()->getFlashdata('error')): ?>
+    <p style="color: red;"><?= session()->getFlashdata('error') ?></p>
+  <?php endif; ?>
   <!-- Bootstrap CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
   
@@ -31,6 +33,21 @@
         height: 100%;
       }
     }
+    .form-outline input {
+      border: 2px solid #007bff;
+      border-radius: 8px;
+    }
+    .form-outline input:focus {
+      box-shadow: 0 0 5px #007bff;
+    }
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      border-radius: 8px;
+    }
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -42,6 +59,9 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+<<<<<<< HEAD
+        <form method="POST" action="/login">
+=======
         <form>
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
           <p class="lead fw-normal fs-1 mb-0 me-3">Sign in</p>
@@ -50,26 +70,27 @@
           <div class="divider d-flex align-items-center my-4">
             <p class="text-center fw-bold mx-3 mb-0">Or</p>
           </div>
+>>>>>>> f2c9d10b4a3c027a362ac4a9e41e9693c37252e0
           <div class="form-outline mb-4">
-            <input type="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address">
+            <input type="email" name="email" id="form3Example3" class="form-control form-control-lg" placeholder="Enter a valid email address">
             <label class="form-label" for="form3Example3">Email address</label>
           </div>
           <div class="form-outline mb-3">
-            <input type="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password">
+            <input type="password" name="password" id="form3Example4" class="form-control form-control-lg" placeholder="Enter password">
             <label class="form-label" for="form3Example4">Password</label>
           </div>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="form-check mb-0">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3">
-              <label class="form-check-label" for="form2Example3">
-                Remember me
-              </label>
-            </div>
-            <a href="#!" class="text-body">Forgot password?</a>
-          </div>
           <div class="text-center text-lg-start mt-4 pt-2">
+<<<<<<< HEAD
           <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" onclick="window.location.href='/layout.php';">Login</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/Signup.php" class="link-danger">Register</a></p>
+=======
+<<<<<<< HEAD
+            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+=======
+            <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="Signup.php" class="link-danger">Register</a></p>
+>>>>>>> f2c9d10b4a3c027a362ac4a9e41e9693c37252e0
+>>>>>>> 1a0eafbaacd79187a3fd1099ef78a72fef66bb8e
           </div>
         </form>
       </div>
